@@ -1,6 +1,7 @@
 import { Card, CardMedia, CardContent, Typography, Box, Chip} from '@mui/material';
 import type { Product } from '../types/inventory';
 
+
 interface Props {
     product: Product;
 };
@@ -10,31 +11,32 @@ export const ProductCard = ({ product }: Props) => {
 
     return (
         <Card sx={{
-            borderRadius: 4,
-            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
+            borderRadius: '40px',
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.25)',
             overflow: 'hidden',
         }}>
             <CardMedia
                 component="img"
-                height="240"
+                height="200"
                 image={product.imageUrl}
                 alt={product.name}
                 sx={{ objectFit: 'cover' }}
             />
-            <CardContent>
-                <Box sx={{display:"flex", justifyContent:"space-between", mb:1}}>
+            <CardContent sx={{ margin: '0 auto', textAlign: 'center' }}>
+                <Box sx={{mb:1}}>
                     <Typography variant="h6" sx={{fontWeight:"700"}}>{product.name}</Typography>
-                    <Chip
+                    
+                </Box>
+                <Typography variant="h4" sx={{color: "primary.main", fontWeight:"800", marginBottom: '2rem', borderBottom: '2px solid #eee', paddingBottom: '1.5rem'    }}>
+                    £{product.price.toLocaleString()}
+                </Typography>
+                <Chip
                         label={isLowStock ? 'Priority Restock' : 'Stable'}
                         color={isLowStock ? 'error' : 'default'}
                         size="small"
-                        sx={{fontWeight: 'bold'}}
+                        sx={{fontWeight: 'bold', padding: '0.25rem 0.75rem', fontSize: '0.75rem'}}
                     />
-                </Box>
-                <Typography variant="h5" sx={{color: "primary.main", fontWeight:"800"}}>
-                    ${product.price.toLocaleString()}
-                </Typography>
-                <Typography variant="body2" sx={{color: "text.secondary", mt: 1}}>
+                <Typography variant="body2" sx={{color: "text.secondary", mt: 1, paddingTop: '0.5rem' }}>
                     Inventory: {product.stockQuantity} units remaining
                 </Typography>
             </CardContent>
