@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Typography, Button, Box, Grid, Paper, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Drawer } from "@mui/material";
 import { Home as HomeIcon, Inventory as InventoryIcon, LocalOffer as TagIcon, Settings as SettingsIcon, AttachMoney as MoneyIcon, Warning as WarningIcon } from '@mui/icons-material';
 import { ProductCard } from "./components/ProductCard";

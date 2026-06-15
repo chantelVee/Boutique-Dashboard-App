@@ -4,11 +4,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Chantel Boiro",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.6",
